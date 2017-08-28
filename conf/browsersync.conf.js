@@ -25,7 +25,14 @@ module.exports = function () {
         }),
 
         // bundler should be the same as above
-        webpackHotMiddleware(webpackBundler)
+        webpackHotMiddleware(webpackBundler),
+
+        // setting some headers in middleware to get CORS enabled.
+        function (req, res, next) {
+          res.setHeader('Access-Control-Allow-Origin', '*');
+          next();
+        }
+
       ]
     },
     open: false
