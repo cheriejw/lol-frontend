@@ -24,25 +24,23 @@ export class Hello2 extends Component {
 
   componentDidMount() {
     this.apiResponse();
+    console.log(this.state.response);
   }
 
   // https://randomuser.me/api/?results=10
   // https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=RGAPI-403df67a-bfc0-4acc-a34f-e2eee9ff30a4
   apiResponse() {
-    return fetch('https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=RGAPI-403df67a-bfc0-4acc-a34f-e2eee9ff30a4', {
+    return fetch('https://randomuser.me/api/', {
       method: 'GET',
-      mode: 'no-cors',
-      headers: {
-        'content-type': 'application/json'
-      }
+      mode: 'cors'
     })
-      .then(data => data.json())
-      .then(json => this.setState({response: json.name.toString()}))
-      .catch(error => {
-        console.log(error);
-      });
-
-    // .then(json => this.setState({response: json}));
+      .then(res => res.text())
+      .then(data => {
+        this.setState({
+          response: data
+        });
+      })
+      .catch(error => console.log('Oops! There Is A Problem', error));
   }
 
   handleChange(event) {
@@ -67,7 +65,7 @@ export class Hello2 extends Component {
           </label>
           <input type="submit" value="Submit"/>
         </form>
-        <p>{this.state.result}</p>
+        <p>{this.state.response}</p>
       </div>
     );
   }
