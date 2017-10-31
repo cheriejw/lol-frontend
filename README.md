@@ -3,6 +3,6 @@ league of legends api + react
 
 look at package.json for scripts.
 
-```bash```
+```bash
 npm install
 ```
