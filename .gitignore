@@ -4,6 +4,3 @@ dist/
 node_modules/
 
 **/keys.js
-
-# temporary until i resolve reverse cor proxy
-**/searchBar.js

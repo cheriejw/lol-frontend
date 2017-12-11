@@ -4,15 +4,13 @@ import {keys} from './keys';
 // https://randomuser.me/api/?results=10
 // 'https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=' + keys.lol
 export const byName = () => {
+  const url = 'https://cors.now.sh/https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=' + keys.lol;
   return (
-    fetch('https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=' + keys.lol, {
-      method: 'GET',
-      mode: 'no-cors',
-      cache: 'default'
-    })
+    fetch(url)
+      .then(res => res.text())
       .then(res => {
         console.log('res', res);
-        return res.json();
+        return res;
       })
       .catch(error => console.log('Error in API summoner by name: ', error))
   );
