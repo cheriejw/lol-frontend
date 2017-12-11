@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {keys} from '../keys';
+import SearchBar from '../components/searchBar';
 
 export default class UserProfile extends Component {
   constructor(props) {
@@ -11,12 +11,6 @@ export default class UserProfile extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      response: this.apiResponse()
-    });
   }
 
   handleChange(event) {
@@ -34,14 +28,7 @@ export default class UserProfile extends Component {
     return (
       <div>
         <h1>{'Hello world two!'}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange}/>
-          </label>
-          <input type="submit" value="Submit"/>
-        </form>
-        <p>{this.state.response}</p>
+        <SearchBar/>
       </div>
     );
   }
