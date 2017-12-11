@@ -1,16 +1,7 @@
 import React, {Component} from 'react';
+import {keys} from '../keys';
 
-export class Hello extends Component {
-  render() {
-    return (
-      <div>
-        <h1>{'Hello world!'}</h1>
-      </div>
-    );
-  }
-}
-
-export class Hello2 extends Component {
+export default class UserProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,24 +14,9 @@ export class Hello2 extends Component {
   }
 
   componentDidMount() {
-    this.apiResponse();
-    console.log(this.state.response);
-  }
-
-  // https://randomuser.me/api/?results=10
-  // https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=RGAPI-403df67a-bfc0-4acc-a34f-e2eee9ff30a4
-  apiResponse() {
-    return fetch('https://randomuser.me/api/', {
-      method: 'GET',
-      mode: 'cors'
-    })
-      .then(res => res.text())
-      .then(data => {
-        this.setState({
-          response: data
-        });
-      })
-      .catch(error => console.log('Oops! There Is A Problem', error));
+    this.setState({
+      response: this.apiResponse()
+    });
   }
 
   handleChange(event) {

@@ -1,1 +1,0 @@
-//https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=
