@@ -37,6 +37,7 @@ Further tasks will be made as I complete the above...
 On in-game render display: user rank, mastery on champ playing, win-rate on champ playing. Eventually after the profile is build, clicking on user will go to user profile.
 
 ### Resources
+[apollo](https://www.apollographql.com/docs/react/#corsSupport)
 [cors now reverse proxy](https://cors.now.sh/)
 [express, jade, node vs react](https://hashnode.com/post/what-is-the-difference-between-server-side-rendering-using-react-vs-using-express-in-nodejs-citkx6nja0asrey537udxdvn6)
 [lol api fetch error](https://discussion.developer.riotgames.com/questions/106/why-am-i-getting-an-access-control-allow-origin-er.html)
