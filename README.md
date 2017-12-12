@@ -17,6 +17,7 @@ Will be slow since I am doing this outside of work, which should consume most of
 - Look up Karma testing/coverage and put in proptypes/tests for home page. Whatever is in the `package.json`. Write atleast one test. **(Two day thing, research and implmentation.)**
 - Write out condition logic for if user is not in game to display the users profile screen, or in-game screen.
 - Write out logic for in-game screen. Respective api calls to gather the data of each player in-game along with original user
+- [implement GraphQL to see if can proxy and enable cors.](http://graphql.org/code/#javascript) [Example](https://github.com/ajhyndman/riot-graphql-api)
 - Reorganize and review the file structure with Tyler or something.
 - Style in-game screen.
 - Write in-game tests, prop-types. (test-after method, will try test before method after I get a hang of testing framework.)
@@ -30,6 +31,7 @@ Further tasks will be made as I complete the above...
 ### Eventual tasks
 - Server to call api and pass to my client. Write own reverse cors proxy. [Node](https://nodejs.org/api/http.html#http_http_request_options_callback)
 - Try test-before method.
+- Docker containers for gql servers.
 
 ### Goal and ideas
 On in-game render display: user rank, mastery on champ playing, win-rate on champ playing. Eventually after the profile is build, clicking on user will go to user profile.
