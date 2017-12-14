@@ -34,6 +34,7 @@ export default class SearchBar extends Component {
     });
   }
 
+  // event.preventDefault(): Page appears to refresh after form submission without this.
   handleSubmit(event) {
     console.log('A username was submitted: ' + this.state.summonerName);
     this.fetchSummoner();
