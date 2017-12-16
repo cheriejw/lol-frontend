@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {keys} from '../api/keys';
+import {keys} from '/config/keys';
 
 export default class SearchBar extends Component {
   constructor(props) {

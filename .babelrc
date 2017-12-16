@@ -6,7 +6,10 @@
   "env": {
     "test": {
       "plugins": [
-        "istanbul"
+        "istanbul",
+        ["babel-root-slash-import", {
+          "rootPathSuffix": "src"
+        }]
       ]
     },
     "production": {

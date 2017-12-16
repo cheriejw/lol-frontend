@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SearchBar from '../components/searchBar';
+import SearchBar from '/components/searchBar';
 
 export default class UserProfile extends Component {
   constructor(props) {

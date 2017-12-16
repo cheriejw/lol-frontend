@@ -1,4 +1,4 @@
-import {keys} from './keys';
+import {keys} from '/config/keys';
 
 // not render jsx dont need React
 // https://randomuser.me/api/?results=10
