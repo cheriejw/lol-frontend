@@ -7,9 +7,11 @@ import {Main, UserProfile} from './views';
 import './index.scss';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}/>
-    <Route path="/two" component={UserProfile}/>
-  </Router>,
+  <div>
+    <Router history={browserHistory}>
+      <Route path="/" component={Main}/>
+      <Route path="/two" component={UserProfile}/>
+    </Router>
+  </div>,
   document.getElementById('root')
 );

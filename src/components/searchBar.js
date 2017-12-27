@@ -14,20 +14,6 @@ export default class SearchBar extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // componentDidMount() {
-  //   const url = 'https://cors.now.sh/https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/rubberice?api_key=' + keys.lol;
-  //   fetch(url)
-  //     .then(res => res.text())
-  //     .then(res => {
-  //       console.log('res', res);
-  //       this.setState({
-  //         response: res,
-  //         isLoading: false
-  //       });
-  //     })
-  //     .catch(error => console.log('Error in API summoner by name: ', error));
-  // }
-
   handleChange(event) {
     this.setState({
       summonerName: event.target.value

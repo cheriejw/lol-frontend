@@ -3,7 +3,6 @@ const conf = require('./gulp.conf');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FailPlugin = require('webpack-fail-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -37,13 +36,51 @@ module.exports = {
           'react-hot-loader',
           'babel-loader'
         ]
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000,
+          mimetype: 'application/font-woff'
+        }
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: '10000',
+          mimetype: 'application/octet-stream'
+        }
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'svg-url-loader',
+        query: {
+          limit: '10000',
+          mimetype: 'application/svg+xml'
+        }
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 8192
+        }
+      },
+      {
+        test: /\.ico(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader'
       }
     ]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    FailPlugin,
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
     }),
